@@ -48,48 +48,46 @@ const MainNewsContent = React.memo(function MainNewsContent() {
   return (
     <Container fixed maxWidth={false}>
       <Preloader loading={loading} />
-      {loading === false && (
-        <div className="root">
-          <main className="content">
-            <Paginator
-              items={items}
-              currentPage={currentPage}
-              pageSize={pageSize}
-              totalResults={totalResults}
-              filterBy={filterBy}
-            />
-            <FilterNews filterBy={filterBy} />
-            <Grid
-              container
-              spacing={4}
-              style={{
-                width: '100%',
-                textAlign: 'center',
-                margin: 0,
-              }}>
-              {items.map((items, index) => (
-                <Grid key={`${items}_${index}`} item xs={12} sm={12} md={6} lg={4} xl={3}>
-                  <NewsCard
-                    url={items.url}
-                    sourceName={items.source.name}
-                    date={items.publishedAt}
-                    key={`${items}_${index}`}
-                    title={items.title}
-                    description={items.description}
-                    urlToImage={items.urlToImage}
-                  />
-                </Grid>
-              ))}
-            </Grid>
-            <Paginator
-              items={items}
-              currentPage={currentPage}
-              pageSize={pageSize}
-              totalResults={totalResults}
-            />
-          </main>
-        </div>
-      )}
+      <div className="root">
+        <main className="content">
+          <Paginator
+            items={items}
+            currentPage={currentPage}
+            pageSize={pageSize}
+            totalResults={totalResults}
+            filterBy={filterBy}
+          />
+          {loading === false && <FilterNews filterBy={filterBy} />}
+          <Grid
+            container
+            spacing={4}
+            style={{
+              width: '100%',
+              textAlign: 'center',
+              margin: 0,
+            }}>
+            {items.map((items, index) => (
+              <Grid key={`${items}_${index}`} item xs={12} sm={12} md={6} lg={4} xl={3}>
+                <NewsCard
+                  url={items.url}
+                  sourceName={items.source.name}
+                  date={items.publishedAt}
+                  key={`${items}_${index}`}
+                  title={items.title}
+                  description={items.description}
+                  urlToImage={items.urlToImage}
+                />
+              </Grid>
+            ))}
+          </Grid>
+          <Paginator
+            items={items}
+            currentPage={currentPage}
+            pageSize={pageSize}
+            totalResults={totalResults}
+          />
+        </main>
+      </div>
     </Container>
   );
 });

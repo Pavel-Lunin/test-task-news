@@ -25,7 +25,11 @@ const NewsCard = React.memo(function NewsCard({
       <Card>
         <CardActionArea>
           {urlToImage ? (
-            <CardMedia className="media" image={urlToImage} />
+            <CardMedia
+              className="media"
+              style={{ backgroundPosition: 'center' }}
+              image={urlToImage}
+            />
           ) : (
             <CardMedia className="media" image={NewsScreen} />
           )}
