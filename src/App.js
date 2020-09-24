@@ -65,11 +65,13 @@ function App() {
     document.body.addEventListener('click', handleOutsideClick);
   }, [handleOutsideClick]);
 
+  const [newsIS, setNewsIS] = React.useState([]);
+
   React.useEffect(() => {
     const parsed = queryString.parse(history.location.search.substr(1));
     let actualPage = currentPage;
     if (!!parsed.page) actualPage = Number(parsed.page);
-    fetchNews(pageSize, actualPage)(dispatch);
+    fetchNews(actualPage, pageSize, setNewsIS, newsIS)(dispatch);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageSize, dispatch]);
 

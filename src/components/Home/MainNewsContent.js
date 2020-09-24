@@ -32,18 +32,25 @@ const MainNewsContent = React.memo(function MainNewsContent() {
     }
   };
 
-  const { items, pageSize, loading, totalResults, currentPage, filterBy } = useSelector(
-    ({ news, filterReducer }) => {
-      return {
-        items: sortBy(news.items, filterReducer.filterBy),
-        currentPage: news.currentPage,
-        filterBy: filterReducer.filterBy,
-        pageSize: news.pageSize,
-        loading: news.loading,
-        totalResults: news.totalResults,
-      };
-    },
-  );
+  const {
+    items,
+    pageSize,
+    loading,
+    totalResults,
+    currentPage,
+    filterBy,
+    pageIsLoading,
+  } = useSelector(({ news, filterReducer }) => {
+    return {
+      items: sortBy(news.items, filterReducer.filterBy),
+      currentPage: news.currentPage,
+      filterBy: filterReducer.filterBy,
+      pageSize: news.pageSize,
+      loading: news.loading,
+      totalResults: news.totalResults,
+      pageIsLoading: news.pageIsLoading,
+    };
+  });
 
   return (
     <Container fixed maxWidth={false}>
@@ -76,6 +83,7 @@ const MainNewsContent = React.memo(function MainNewsContent() {
                   title={items.title}
                   description={items.description}
                   urlToImage={items.urlToImage}
+                  pageIsLoading={pageIsLoading}
                 />
               </Grid>
             ))}

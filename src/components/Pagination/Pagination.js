@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import './Paginator.css';
+import './Pagination.css';
 import { fetchNewPage } from '../../redux/actions/news';
 import { Button } from '@material-ui/core';
 
@@ -33,7 +33,7 @@ const Paginator = React.memo(({ pageSize, totalResults, currentPage, portionSize
   }, [currentPage]);
 
   return (
-    <div className="paginator">
+    <div className="pagination">
       {portionNumber > 1 && (
         <Button
           variant="outlined"

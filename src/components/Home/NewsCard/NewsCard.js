@@ -11,6 +11,7 @@ import ButtonCard from './Button/ButtonCard';
 import './NewsCard.css';
 import NewsDate from './NewsDate/NewsDate';
 import NewsScreen from '../../common/img/NewsScreen.jpg';
+import NewsLoadingBlock from './NewsLoadingBlock/NewsLoadingBlock';
 
 const NewsCard = React.memo(function NewsCard({
   title,
@@ -19,7 +20,11 @@ const NewsCard = React.memo(function NewsCard({
   date,
   sourceName,
   url,
+  pageIsLoading,
 }) {
+  if (pageIsLoading) {
+    return <NewsLoadingBlock />;
+  }
   return (
     <div className="root card">
       <Card>
