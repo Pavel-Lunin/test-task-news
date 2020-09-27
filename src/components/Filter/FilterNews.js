@@ -1,13 +1,13 @@
 import React from 'react';
 import { ButtonGroup, Button } from '@material-ui/core';
-import { setFilterNews } from '../../redux/actions/filter';
+import { setNewsFilter } from '../../redux/actions/filter';
 import { useDispatch } from 'react-redux';
 
 const FilterNews = React.memo(function FilterNews({ filterBy }) {
-  const dispatch = useDispatch(setFilterNews());
+  const dispatch = useDispatch();
 
   const filterNewsClick = (filterBy) => {
-    dispatch(setFilterNews(filterBy));
+    dispatch(setNewsFilter(filterBy));
   };
 
   return (

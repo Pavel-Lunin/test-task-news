@@ -1,54 +1,27 @@
 import axios from 'axios';
 
+const baseUrl = `https://newsapi.org/v2/top-headlines?country=ru&apiKey=51b176c05fc644bd925465164359fb01&`;
+
 export const fetchNews = (currentPage, pageSize) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(setLoading(true));
-    axios
-      .get(
-        `https://newsapi.org/v2/top-headlines?country=ru&apiKey=51b176c05fc644bd925465164359fb01&page=${currentPage}&pageSize=${pageSize}`,
-      )
-      .then((res) => {
-        dispatch(setNews(res.data.articles));
-        dispatch(setTotalResults(res.data.totalResults));
-        dispatch(setCurrentPage(currentPage));
-        dispatch(setLoading(false));
-      });
+    const response = await axios.get(`${baseUrl}page=${currentPage}&pageSize=${pageSize}`);
+    dispatch(setNews(response.data.articles));
+    dispatch(setTotalResults(response.data.totalResults));
+    dispatch(setCurrentPage(currentPage));
+    dispatch(setLoading(false));
   };
 };
 
 export const fetchNewPage = (currentPage, pageSize) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(setCurrentPage(currentPage));
     dispatch(setPageIsLoading(true));
-    axios
-      .get(
-        `https://newsapi.org/v2/top-headlines?country=ru&apiKey=51b176c05fc644bd925465164359fb01&page=${currentPage}&pageSize=${pageSize}`,
-      )
-      .then((res) => {
-        dispatch(setNews(res.data.articles));
-        dispatch(setPageIsLoading(false));
-      });
+    const response = await axios.get(`${baseUrl}page=${currentPage}&pageSize=${pageSize}`);
+    dispatch(setNews(response.data.articles));
+    dispatch(setPageIsLoading(false));
   };
 };
-
-//Для infinity scroll
-
-//export const fetchNewsIS = (currentPage, pageSize) => {
-//  return (dispatch) => {
-//    dispatch(setCurrentPage(currentPage));
-//    axios
-//      .get(
-//        `https://newsapi.org/v2/top-headlines?country=ru&apiKey=51b176c05fc644bd925465164359fb01&page=${currentPage}&pageSize=${pageSize}`,
-//      )
-//      .then((res) => {
-//        dispatch(setNewsIS(res.data.articles));
-//      });
-//  };
-//};
-//export const setNewsIS = (itemsForIS) => ({
-//  type: 'SET_NEWS_IS',
-//  itemsForIS,
-//});
 
 export const setNews = (items) => ({
   type: 'SET_NEWS',

@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = React.memo(function Header({ toggleVisibleMenu }) {
+function Header({ toggleVisibleMenu }) {
   const classes = useStyles();
 
   return (
@@ -48,6 +48,6 @@ const Header = React.memo(function Header({ toggleVisibleMenu }) {
       </AppBar>
     </>
   );
-});
+}
 
 export default Header;
