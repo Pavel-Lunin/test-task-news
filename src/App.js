@@ -42,13 +42,6 @@ function App() {
     setVisibleMenu(!visibleMenu);
   }, [visibleMenu]);
 
-  const handleOutsideClick = React.useCallback((event) => {
-    const path = event.path || (event.composedPath && event.composedPath());
-    if (!path.includes(sortRef.current)) {
-      setVisibleMenu(false);
-    }
-  }, []);
-
   const { pageSize, currentPage, darkMode, fontSizeValue, filterBy } = useSelector(
     ({ news, theme, filterReducer }) => {
       return {
@@ -60,10 +53,6 @@ function App() {
       };
     },
   );
-
-  React.useEffect(() => {
-    document.body.addEventListener('click', handleOutsideClick);
-  }, [handleOutsideClick]);
 
   const [newsIS, setNewsIS] = React.useState([]);
 
@@ -116,7 +105,7 @@ function App() {
               exact
             />
             <Route path="/help" component={Help} exact />
-            <Route path="/AboutUs" component={AboutUs} exact />
+            <Route path="/AboutUs" render={() => <AboutUs darkMode={darkMode} />} exact />
             <Route render={() => <div>404 NOT FOUND</div>} />
           </Switch>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutUs.css';
 
-const AboutUs = React.memo(() => {
+const AboutUs = React.memo(({ darkMode }) => {
   return (
     <section className="contacts">
       <iframe
@@ -11,7 +11,7 @@ const AboutUs = React.memo(() => {
         frameBorder="0"
         title="myFrame"></iframe>
       <div className="contacts-block">
-        <div className="contacts-block__adress">
+        <div className={darkMode ? 'contacts-block__dark' : 'contacts-block__adress'}>
           <span className="contacts-block__title">Адрес офиса</span>
           г. Хабаровск, ул. Пионерская, д. 1
         </div>

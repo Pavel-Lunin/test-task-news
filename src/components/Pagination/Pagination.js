@@ -10,8 +10,8 @@ const Paginator = React.memo(({ pageSize, totalResults, currentPage, portionSize
   const dispatch = useDispatch();
 
   const onPageChanged = React.useCallback(
-    (currentPage) => {
-      fetchNewPage(currentPage, pageSize)(dispatch);
+    (p) => {
+      fetchNewPage(p, pageSize)(dispatch);
     },
     [pageSize, dispatch],
   );

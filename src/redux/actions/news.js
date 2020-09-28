@@ -4,22 +4,30 @@ const baseUrl = `https://newsapi.org/v2/top-headlines?country=ru&apiKey=51b176c0
 
 export const fetchNews = (currentPage, pageSize) => {
   return async (dispatch) => {
-    dispatch(setLoading(true));
-    const response = await axios.get(`${baseUrl}page=${currentPage}&pageSize=${pageSize}`);
-    dispatch(setNews(response.data.articles));
-    dispatch(setTotalResults(response.data.totalResults));
-    dispatch(setCurrentPage(currentPage));
-    dispatch(setLoading(false));
+    try {
+      dispatch(setLoading(true));
+      const response = await axios.get(`${baseUrl}page=${currentPage}&pageSize=${pageSize}`);
+      dispatch(setNews(response.data.articles));
+      dispatch(setTotalResults(response.data.totalResults));
+      dispatch(setCurrentPage(currentPage));
+      dispatch(setLoading(false));
+    } catch (e) {
+      console.error(e);
+    }
   };
 };
 
 export const fetchNewPage = (currentPage, pageSize) => {
   return async (dispatch) => {
-    dispatch(setCurrentPage(currentPage));
-    dispatch(setPageIsLoading(true));
-    const response = await axios.get(`${baseUrl}page=${currentPage}&pageSize=${pageSize}`);
-    dispatch(setNews(response.data.articles));
-    dispatch(setPageIsLoading(false));
+    try {
+      dispatch(setCurrentPage(currentPage));
+      dispatch(setPageIsLoading(true));
+      const response = await axios.get(`${baseUrl}page=${currentPage}&pageSize=${pageSize}`);
+      dispatch(setNews(response.data.articles));
+      dispatch(setPageIsLoading(false));
+    } catch (e) {
+      console.error(e);
+    }
   };
 };
 

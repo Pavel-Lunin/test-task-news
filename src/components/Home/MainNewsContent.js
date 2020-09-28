@@ -75,16 +75,21 @@ const MainNewsContent = React.memo(function MainNewsContent() {
             }}>
             {items.map((items, index) => (
               <Grid key={`${items}_${index}`} item xs={12} sm={12} md={6} lg={4} xl={3}>
-                <NewsCard
-                  url={items.url}
-                  sourceName={items.source.name}
-                  date={items.publishedAt}
-                  key={`${items}_${index}`}
-                  title={items.title}
-                  description={items.description}
-                  urlToImage={items.urlToImage}
-                  pageIsLoading={pageIsLoading}
-                />
+                <a
+                  style={{ textDecoration: 'none' }}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href={items.url}>
+                  <NewsCard
+                    sourceName={items.source.name}
+                    date={items.publishedAt}
+                    key={`${items}_${index}`}
+                    title={items.title}
+                    description={items.description}
+                    urlToImage={items.urlToImage}
+                    pageIsLoading={pageIsLoading}
+                  />
+                </a>
               </Grid>
             ))}
           </Grid>

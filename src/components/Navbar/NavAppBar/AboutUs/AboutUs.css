@@ -22,3 +22,11 @@
   margin-bottom: 8px;
   margin-top: 8px;
 }
+.contacts-block__dark {
+  display: block;
+  color: #000;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
