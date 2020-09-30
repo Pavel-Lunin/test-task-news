@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/newsstatic/css/main.093e7d0d.chunk.css",
-    "main.js": "/newsstatic/js/main.94431d34.chunk.js",
-    "main.js.map": "/newsstatic/js/main.94431d34.chunk.js.map",
-    "runtime-main.js": "/newsstatic/js/runtime-main.620e2cc0.js",
-    "runtime-main.js.map": "/newsstatic/js/runtime-main.620e2cc0.js.map",
-    "static/js/2.eb18cc35.chunk.js": "/newsstatic/js/2.eb18cc35.chunk.js",
-    "static/js/2.eb18cc35.chunk.js.map": "/newsstatic/js/2.eb18cc35.chunk.js.map",
-    "index.html": "/newsindex.html",
-    "precache-manifest.882c3c5863f227a8343ca98688fc29c8.js": "/newsprecache-manifest.882c3c5863f227a8343ca98688fc29c8.js",
-    "service-worker.js": "/newsservice-worker.js",
-    "static/css/main.093e7d0d.chunk.css.map": "/newsstatic/css/main.093e7d0d.chunk.css.map",
-    "static/js/2.eb18cc35.chunk.js.LICENSE.txt": "/newsstatic/js/2.eb18cc35.chunk.js.LICENSE.txt",
-    "static/media/NewsScreen.jpg": "/newsstatic/media/NewsScreen.1a463468.jpg"
+    "main.css": "/test-task-news/static/css/main.093e7d0d.chunk.css",
+    "main.js": "/test-task-news/static/js/main.94431d34.chunk.js",
+    "main.js.map": "/test-task-news/static/js/main.94431d34.chunk.js.map",
+    "runtime-main.js": "/test-task-news/static/js/runtime-main.55cb495c.js",
+    "runtime-main.js.map": "/test-task-news/static/js/runtime-main.55cb495c.js.map",
+    "static/js/2.eb18cc35.chunk.js": "/test-task-news/static/js/2.eb18cc35.chunk.js",
+    "static/js/2.eb18cc35.chunk.js.map": "/test-task-news/static/js/2.eb18cc35.chunk.js.map",
+    "index.html": "/test-task-news/index.html",
+    "precache-manifest.f71d27c8b41f25b0b1a4d5ed91decf4f.js": "/test-task-news/precache-manifest.f71d27c8b41f25b0b1a4d5ed91decf4f.js",
+    "service-worker.js": "/test-task-news/service-worker.js",
+    "static/css/main.093e7d0d.chunk.css.map": "/test-task-news/static/css/main.093e7d0d.chunk.css.map",
+    "static/js/2.eb18cc35.chunk.js.LICENSE.txt": "/test-task-news/static/js/2.eb18cc35.chunk.js.LICENSE.txt",
+    "static/media/NewsScreen.jpg": "/test-task-news/static/media/NewsScreen.1a463468.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.620e2cc0.js",
+    "static/js/runtime-main.55cb495c.js",
     "static/js/2.eb18cc35.chunk.js",
     "static/css/main.093e7d0d.chunk.css",
     "static/js/main.94431d34.chunk.js"

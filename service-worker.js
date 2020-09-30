@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/newsprecache-manifest.882c3c5863f227a8343ca98688fc29c8.js"
+  "/test-task-news/precache-manifest.f71d27c8b41f25b0b1a4d5ed91decf4f.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/newsindex.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/test-task-news/index.html"), {
   
   blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
 });
