@@ -40,7 +40,8 @@ const MainNewsContent = React.memo(function MainNewsContent() {
     currentPage,
     filterBy,
     pageIsLoading,
-  } = useSelector(({ news, filterReducer }) => {
+    darkMode,
+  } = useSelector(({ news, filterReducer, theme }) => {
     return {
       items: sortBy(news.items, filterReducer.filterBy),
       currentPage: news.currentPage,
@@ -49,6 +50,7 @@ const MainNewsContent = React.memo(function MainNewsContent() {
       loading: news.loading,
       totalResults: news.totalResults,
       pageIsLoading: news.pageIsLoading,
+      darkMode: theme.darkMode,
     };
   });
 
@@ -88,6 +90,7 @@ const MainNewsContent = React.memo(function MainNewsContent() {
                     description={items.description}
                     urlToImage={items.urlToImage}
                     pageIsLoading={pageIsLoading}
+                    darkMode={darkMode}
                   />
                 </a>
               </Grid>

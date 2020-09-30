@@ -21,9 +21,10 @@ const NewsCard = React.memo(function NewsCard({
   sourceName,
   url,
   pageIsLoading,
+  darkMode,
 }) {
   if (pageIsLoading) {
-    return <NewsLoadingBlock />;
+    return <NewsLoadingBlock darkMode={darkMode} />;
   }
   return (
     <div className="root card">
