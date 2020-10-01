@@ -1,6 +1,6 @@
 import React from 'react';
 import { CircularProgress } from '@material-ui/core';
-import './Preloader.css';
+import './Preloader.sass';
 
 let Preloader = ({ loading }) => {
   return loading ? (

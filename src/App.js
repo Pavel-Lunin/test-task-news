@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import './App.css';
+import './App.sass';
 import Settings from './components/Navbar/NavAppBar/Settings/Settings';
 import Help from './components/Navbar/NavAppBar/Help/Help';
 import AboutUs from './components/Navbar/NavAppBar/AboutUs/AboutUs';

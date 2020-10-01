@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@material-ui/core';
 import ButtonCard from './Button/ButtonCard';
-import './NewsCard.css';
+import './NewsCard.sass';
 import NewsDate from './NewsDate/NewsDate';
 import NewsScreen from '../../common/img/NewsScreen.jpg';
 import NewsLoadingBlock from './NewsLoadingBlock/NewsLoadingBlock';

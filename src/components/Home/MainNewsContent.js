@@ -3,7 +3,7 @@ import { Container, Grid } from '@material-ui/core';
 import NewsCard from './NewsCard/NewsCard';
 import Paginator from '../Pagination/Pagination';
 import Preloader from '../common/Preloader/Preloader';
-import './MainNewsContent.css';
+import './MainNewsContent.sass';
 import FilterNews from '../Filter/FilterNews';
 import { useSelector } from 'react-redux';
 import filter from 'lodash/filter';

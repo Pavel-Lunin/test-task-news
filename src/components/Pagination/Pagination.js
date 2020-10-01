@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import './Pagination.css';
+import './Pagination.sass';
 import { fetchNewPage } from '../../redux/actions/news';
 import { Button } from '@material-ui/core';
 
