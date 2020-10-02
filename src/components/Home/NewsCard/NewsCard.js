@@ -27,15 +27,11 @@ const NewsCard = React.memo(function NewsCard({
     return <NewsLoadingBlock darkMode={darkMode} />;
   }
   return (
-    <div className="root card">
+    <div className="root">
       <Card>
         <CardActionArea>
           {urlToImage ? (
-            <CardMedia
-              className="media"
-              style={{ backgroundPosition: 'center' }}
-              image={urlToImage}
-            />
+            <CardMedia className="media" image={urlToImage} />
           ) : (
             <CardMedia className="media" image={NewsScreen} />
           )}

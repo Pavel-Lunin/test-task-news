@@ -16,7 +16,6 @@ import * as queryString from 'querystring';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    fontSize: '1.4rem',
   },
 
   content: {
@@ -74,7 +73,7 @@ function App() {
   const theme = createMuiTheme({
     palette: { type: darkMode ? 'dark' : 'light' },
     typography: {
-      htmlFontSize: fontSizeValue * 10,
+      fontSize: fontSizeValue,
     },
   });
 

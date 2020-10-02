@@ -1,6 +1,6 @@
 const initialState = {
   darkMode: false,
-  fontSizeValue: 1.1,
+  fontSizeValue: 12,
 };
 
 const themeReducer = (state = initialState, action) => {

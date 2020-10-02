@@ -63,16 +63,15 @@ const Settings = React.memo(({ pageSize, fontSizeValue }) => {
         value={fontSizeValue}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"
-        step={0.1}
+        step={1}
         marks
-        min={0.9}
-        max={1.5}
+        min={10}
+        max={20}
         onChange={changeFontSize}
       />
-      <Typography id="font" style={{ fontSize: fontSizeValue * 10 }}>
-        "Это пример!" и его размер: {fontSizeValue * 10}
+      <Typography id="font" style={{ fontSize: fontSizeValue }}>
+        "Это пример!" и его размер: {fontSizeValue}
       </Typography>
-      {/* перевернуть ползунок */}
       <div>
         <Divider className={classes.divider} />
       </div>

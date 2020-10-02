@@ -1,4 +1,4 @@
 export const setNewsFilter = (filterBy) => ({
-  type: 'SET_FILTER',
+  type: 'filter/SET_FILTER',
   filterBy,
 });
